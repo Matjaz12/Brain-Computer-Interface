@@ -1,18 +1,26 @@
-function computeFeatures(sub, task, nFeatures)
+function computeFeatures(sub, task, nFeatures, arFeatures)
 % Function computes features and labels. Extracted features are saved in a
-% file title "featureVectors.txt", labels are saved in file titled "referenceClass.txt". Saved
-% files can be used to perform classification.
+% file titled "featureVectores.txt", labels are saved in a file titled
+% "referenceClass.txt". Saved files can be used to perform classification.
 % Input parameters:
-%       sub - name of the subject
-%       task - name of the task, either Task1 (open and close left or right fist) 
-%              or Task2 (imagine opening and closing left or right fist)
-%       nFeatures - Number of features to extract, the value should be devisible by 2.
+%       sub - name of the subject.
+%       task - name of the task: Task1 (open and close left or right fist)
+%       or Task2 (imagine opening and closing left or right fist).
+%       nFeatures - Number of features to extract. nFeatures should be
+%       devisible by 2.
+%       arFeatures - Add Autoregressive features or not.
+% 
 % Example of a command: 
-%       computeFeatures('S001', 'Task2', 4)
+%       computeFeatures('S001', 'Task2', 4, true)
 
-    %if (nargin < 3)
-    %    nFeatures = 2;
-    %end
+    if (nargin < 3)
+        nFeatures = 2;
+        arFeatures = false;
+    end
+
+    if (nargin < 4)
+        arFeatures = false;
+    end
 
     %sub = 'S001';
     %task = 'Task2';
@@ -107,14 +115,13 @@ function computeFeatures(sub, task, nFeatures)
         p = 10;
         [a_first, ~] = arburg(f_i(1, :), p);
         [a_last, ~] = arburg(f_i(size(f_i, 1), :), p);
-        a = [a_first, a_last]
 
         % Compute the log of Var for each dimension of the feature vector
         for k=1:nFeatures
             lvT1(i, k) = log(var(f_i(k, :)));
         end
 
-        mergedT1(i, :) = [lvT1(i, :),  a];
+        mergedT1(i, :) = [lvT1(i, :),  [a_first, a_last]];
     end
 
     for i=1:size(T2s, 2)
@@ -143,14 +150,13 @@ function computeFeatures(sub, task, nFeatures)
         p = 10;
         [a_first, ~] = arburg(f_i(1, :), p);
         [a_last, ~] = arburg(f_i(size(f_i, 1), :), p);
-        a = [a_first, a_last]
 
         % Compute the log of Var for each dimension of the feature vector
         for k=1:nFeatures
             lvT2(i, k) = log(var(f_i(k, :)));
         end
 
-        mergedT2(i, :) = [lvT2(i, :),  a];
+        mergedT2(i, :) = [lvT2(i, :),  [a_first, a_last]];
     end
 
     % Display scatter plot of classes (only makes sense if nFeatures=2)
@@ -179,8 +185,12 @@ function computeFeatures(sub, task, nFeatures)
     % [a, var] = arburg(x, p);
 
     % Save feature vectors as "featureVectors.txt" and labels "referenceClass.txt"
-    featureVectors = [lvT1; lvT2];
-    % featureVectors = [mergedT1; mergedT2];
+    
+    if (arFeatures == true)
+        featureVectors = [mergedT1; mergedT2];
+    else
+        featureVectors = [lvT1; lvT2];
+    end
 
     classes = ["T1" + strings([size(lvT1, 1), 1]); "T2" + strings([size(lvT2, 1), 1])];
     fprintf("Extracted feature vectors\n");
