@@ -1,0 +1,56 @@
+(csp + ar)
+
+   All records-Test   TP= 28 FN=  2; FP=  2 TN= 28; Se:  93.33 Sp:  93.33 CA:  93.33 AUC:  97.78
+   All records-Learn  TP= 28 FN=  2; FP=  2 TN= 28; Se:  93.33 Sp:  93.33 CA:  93.33 AUC:  97.78
+   20% holdout-Test  Single  TP=  6 FN=  0; FP=  0 TN=  6; Se: 100.00 Sp: 100.00 CA: 100.00 AUC: 100.00
+   20% holdout-Learn Single  TP=  6 FN=  0; FP=  0 TN=  6; Se: 100.00 Sp: 100.00 CA: 100.00 AUC:  97.92
+     20% holdout-Test  Nrep  TP=  5 FN=  1; FP=  1 TN=  5; Se:  83.33 Sp:  83.33 CA:  83.33 AUC:  80.00
+     20% holdout-Learn Nrep  TP=  5 FN=  1; FP=  1 TN=  5; Se:  83.33 Sp:  83.33 CA:  83.33 AUC:  99.14
+   Cross-valid-Test  Single  TP= 22 FN=  8; FP=  7 TN= 23; Se:  73.33 Sp:  76.67 CA:  75.00 AUC:  79.22
+   Cross-valid-Learn Single  TP= 22 FN=  8; FP=  7 TN= 23; Se:  73.33 Sp:  76.67 CA:  75.00 AUC:  98.50
+     Cross-valid-Test  Nrep  TP= 22 FN=  8; FP=  5 TN= 25; Se:  73.33 Sp:  83.33 CA:  78.33 AUC:  78.77
+     Cross-valid-Learn Nrep  TP= 22 FN=  8; FP=  5 TN= 25; Se:  73.33 Sp:  83.33 CA:  78.33 AUC:  98.58
+   Leave one o-Test   TP= 23 FN=  7; FP=  6 TN= 24; Se:  76.67 Sp:  80.00 CA:  78.33 AUC:  78.56
+   Leave one o-Learn  TP= 23 FN=  7; FP=  6 TN= 24; Se:  76.67 Sp:  80.00 CA:  78.33 AUC:  97.95
+QDA
+   All records-Test   TP= 30 FN=  0; FP=  0 TN= 30; Se: 100.00 Sp: 100.00 CA: 100.00 AUC: 100.00
+   All records-Learn  TP= 30 FN=  0; FP=  0 TN= 30; Se: 100.00 Sp: 100.00 CA: 100.00 AUC: 100.00
+   20% holdout-Test  Single  TP=  6 FN=  0; FP=  6 TN=  0; Se: 100.00 Sp:   0.00 CA:  50.00 AUC:  50.00
+   20% holdout-Learn Single  TP=  6 FN=  0; FP=  6 TN=  0; Se: 100.00 Sp:   0.00 CA:  50.00 AUC: 100.00
+     20% holdout-Test  Nrep  TP=  6 FN=  0; FP=  5 TN=  1; Se: 100.00 Sp:  16.67 CA:  58.33 AUC:  54.40
+     20% holdout-Learn Nrep  TP=  6 FN=  0; FP=  5 TN=  1; Se: 100.00 Sp:  16.67 CA:  58.33 AUC: 100.00
+   Cross-valid-Test  Single  TP= 29 FN=  1; FP= 18 TN= 12; Se:  96.67 Sp:  40.00 CA:  68.33 AUC:  73.83
+   Cross-valid-Learn Single  TP= 29 FN=  1; FP= 18 TN= 12; Se:  96.67 Sp:  40.00 CA:  68.33 AUC: 100.00
+     Cross-valid-Test  Nrep  TP= 28 FN=  2; FP= 15 TN= 15; Se:  93.33 Sp:  50.00 CA:  71.67 AUC:  75.41
+     Cross-valid-Learn Nrep  TP= 28 FN=  2; FP= 15 TN= 15; Se:  93.33 Sp:  50.00 CA:  71.67 AUC: 100.00
+   Leave one o-Test   TP= 28 FN=  2; FP= 13 TN= 17; Se:  93.33 Sp:  56.67 CA:  75.00 AUC:  86.89
+   Leave one o-Learn  TP= 28 FN=  2; FP= 13 TN= 17; Se:  93.33 Sp:  56.67 CA:  75.00 AUC: 100.00
+
+(csp)
+
+LDA
+   All records-Test   TP= 15 FN=  7; FP= 11 TN= 10; Se:  68.18 Sp:  47.62 CA:  58.14 AUC:  68.40
+   All records-Learn  TP= 15 FN=  7; FP= 11 TN= 10; Se:  68.18 Sp:  47.62 CA:  58.14 AUC:  68.40
+   20% holdout-Test  Single  TP=  1 FN=  3; FP=  2 TN=  2; Se:  25.00 Sp:  50.00 CA:  37.50 AUC:  25.00
+   20% holdout-Learn Single  TP=  1 FN=  3; FP=  2 TN=  2; Se:  25.00 Sp:  50.00 CA:  37.50 AUC:  72.55
+     20% holdout-Test  Nrep  TP=  2 FN=  2; FP=  3 TN=  1; Se:  50.00 Sp:  25.00 CA:  37.50 AUC:  32.50
+     20% holdout-Learn Nrep  TP=  2 FN=  2; FP=  3 TN=  1; Se:  50.00 Sp:  25.00 CA:  37.50 AUC:  70.80
+   Cross-valid-Test  Single  TP= 11 FN= 11; FP= 15 TN=  6; Se:  50.00 Sp:  28.57 CA:  39.53 AUC:  37.88
+   Cross-valid-Learn Single  TP= 11 FN= 11; FP= 15 TN=  6; Se:  50.00 Sp:  28.57 CA:  39.53 AUC:  67.65
+     Cross-valid-Test  Nrep  TP= 10 FN= 12; FP= 14 TN=  7; Se:  45.45 Sp:  33.33 CA:  39.53 AUC:  37.09
+     Cross-valid-Learn Nrep  TP= 10 FN= 12; FP= 14 TN=  7; Se:  45.45 Sp:  33.33 CA:  39.53 AUC:  68.12
+   Leave one o-Test   TP= 10 FN= 12; FP= 14 TN=  7; Se:  45.45 Sp:  33.33 CA:  39.53 AUC:  32.68
+   Leave one o-Learn  TP= 10 FN= 12; FP= 14 TN=  7; Se:  45.45 Sp:  33.33 CA:  39.53 AUC:  67.37
+QDA
+   All records-Test   TP= 12 FN= 10; FP=  6 TN= 15; Se:  54.55 Sp:  71.43 CA:  62.79 AUC:  77.71
+   All records-Learn  TP= 12 FN= 10; FP=  6 TN= 15; Se:  54.55 Sp:  71.43 CA:  62.79 AUC:  77.71
+   20% holdout-Test  Single  TP=  1 FN=  3; FP=  4 TN=  0; Se:  25.00 Sp:   0.00 CA:  12.50 AUC:   0.00
+   20% holdout-Learn Single  TP=  1 FN=  3; FP=  4 TN=  0; Se:  25.00 Sp:   0.00 CA:  12.50 AUC:  82.68
+     20% holdout-Test  Nrep  TP=  2 FN=  2; FP=  3 TN=  1; Se:  50.00 Sp:  25.00 CA:  37.50 AUC:  35.42
+     20% holdout-Learn Nrep  TP=  2 FN=  2; FP=  3 TN=  1; Se:  50.00 Sp:  25.00 CA:  37.50 AUC:  83.83
+   Cross-valid-Test  Single  TP=  9 FN= 13; FP= 13 TN=  8; Se:  40.91 Sp:  38.10 CA:  39.53 AUC:  34.85
+   Cross-valid-Learn Single  TP=  9 FN= 13; FP= 13 TN=  8; Se:  40.91 Sp:  38.10 CA:  39.53 AUC:  80.54
+     Cross-valid-Test  Nrep  TP=  9 FN= 13; FP= 13 TN=  8; Se:  40.91 Sp:  38.10 CA:  39.53 AUC:  38.04
+     Cross-valid-Learn Nrep  TP=  9 FN= 13; FP= 13 TN=  8; Se:  40.91 Sp:  38.10 CA:  39.53 AUC:  80.70
+   Leave one o-Test   TP=  9 FN= 13; FP= 13 TN=  8; Se:  40.91 Sp:  38.10 CA:  39.53 AUC:  35.50
+   Leave one o-Learn  TP=  9 FN= 13; FP= 13 TN=  8; Se:  40.91 Sp:  38.10 CA:  39.53 AUC:  78.80

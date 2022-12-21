@@ -1,7 +1,6 @@
 function computeFeatures(sub, task, nFeatures)
-% Function computes feature
-% Function computes features and labels. Extracted features are saved in a file titled
-% "featureVectors.txt", labels are saved in file titled "referenceClass.txt". Saved
+% Function computes features and labels. Extracted features are saved in a
+% file title "featureVectors.txt", labels are saved in file titled "referenceClass.txt". Saved
 % files can be used to perform classification.
 % Input parameters:
 %       sub - name of the subject
@@ -100,6 +99,13 @@ function computeFeatures(sub, task, nFeatures)
 
         % transpose the feature vector, such that it is of shape (P x M)
         f_i = transpose(f_i);
+
+        % compute AR features (only for the most dominant signals)
+        p = 10;
+        [a_first, ~] = arburg(f_i(1, :), p);
+        [a_last, ~] = arburg(f_i(size(f_i, 1), :), p);
+        arf_i = [transpose(a_first); a_last];
+        display(size(arf_i));
         
         % Filter the feature vector
         f_i = filter(b, a, f_i);

@@ -99,20 +99,22 @@ function computeFeatures(sub, task, nFeatures)
 
         % transpose the feature vector, such that it is of shape (P x M)
         f_i = transpose(f_i);
-
-        % add AR features
-        %for i:1:size(f_i, 1)
-        %    [a, var] = arburg(f_i(i, :), p);
-        %    a
-        %end
         
         % Filter the feature vector
         f_i = filter(b, a, f_i);
+
+        % compute AR features (only for the most dominant signals)
+        p = 10;
+        [a_first, ~] = arburg(f_i(1, :), p);
+        [a_last, ~] = arburg(f_i(size(f_i, 1), :), p);
+        a = [a_first, a_last]
 
         % Compute the log of Var for each dimension of the feature vector
         for k=1:nFeatures
             lvT1(i, k) = log(var(f_i(k, :)));
         end
+
+        mergedT1(i, :) = [lvT1(i, :),  a];
     end
 
     for i=1:size(T2s, 2)
@@ -137,10 +139,18 @@ function computeFeatures(sub, task, nFeatures)
         % Filter the feature vector
         f_i = filter(b, a, f_i);
 
+        % compute AR features (only for the most dominant signals)
+        p = 10;
+        [a_first, ~] = arburg(f_i(1, :), p);
+        [a_last, ~] = arburg(f_i(size(f_i, 1), :), p);
+        a = [a_first, a_last]
+
         % Compute the log of Var for each dimension of the feature vector
         for k=1:nFeatures
             lvT2(i, k) = log(var(f_i(k, :)));
         end
+
+        mergedT2(i, :) = [lvT2(i, :),  a];
     end
 
     % Display scatter plot of classes (only makes sense if nFeatures=2)
@@ -170,6 +180,8 @@ function computeFeatures(sub, task, nFeatures)
 
     % Save feature vectors as "featureVectors.txt" and labels "referenceClass.txt"
     featureVectors = [lvT1; lvT2];
+    % featureVectors = [mergedT1; mergedT2];
+
     classes = ["T1" + strings([size(lvT1, 1), 1]); "T2" + strings([size(lvT2, 1), 1])];
     fprintf("Extracted feature vectors\n");
     fprintf("size(featureVectors): %d x %d\n", size(featureVectors));
