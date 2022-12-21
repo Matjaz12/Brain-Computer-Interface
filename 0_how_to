@@ -1,0 +1,37 @@
+
+Command:
+
+doClassification('featureVectors.txt','referenceClass.txt',{1,1},10, 30, 0)
+
+doClassification('featureVectors.txt','referenceClass.txt',{1,1},10, 30, 1) 
+
+>> 
+>> doClassification('featureVectors.txt','referenceClass.txt',{1,1},10, 30, 0)
+Size: 60x22; EVENT: Class_1; NON-EVENT: Class_2
+LDA
+   All records-Test   TP= 28 FN=  2; FP=  2 TN= 28; Se:  93.33 Sp:  93.33 CA:  93.33 AUC:  97.78
+   All records-Learn  TP= 28 FN=  2; FP=  2 TN= 28; Se:  93.33 Sp:  93.33 CA:  93.33 AUC:  97.78
+   20% holdout-Test  Single  TP=  6 FN=  0; FP=  0 TN=  6; Se: 100.00 Sp: 100.00 CA: 100.00 AUC: 100.00
+   20% holdout-Learn Single  TP=  6 FN=  0; FP=  0 TN=  6; Se: 100.00 Sp: 100.00 CA: 100.00 AUC:  97.92
+     20% holdout-Test  Nrep  TP=  5 FN=  1; FP=  1 TN=  5; Se:  83.33 Sp:  83.33 CA:  83.33 AUC:  80.00
+     20% holdout-Learn Nrep  TP=  5 FN=  1; FP=  1 TN=  5; Se:  83.33 Sp:  83.33 CA:  83.33 AUC:  99.14
+   Cross-valid-Test  Single  TP= 22 FN=  8; FP=  7 TN= 23; Se:  73.33 Sp:  76.67 CA:  75.00 AUC:  79.22
+   Cross-valid-Learn Single  TP= 22 FN=  8; FP=  7 TN= 23; Se:  73.33 Sp:  76.67 CA:  75.00 AUC:  98.50
+     Cross-valid-Test  Nrep  TP= 22 FN=  8; FP=  5 TN= 25; Se:  73.33 Sp:  83.33 CA:  78.33 AUC:  78.77
+     Cross-valid-Learn Nrep  TP= 22 FN=  8; FP=  5 TN= 25; Se:  73.33 Sp:  83.33 CA:  78.33 AUC:  98.58
+   Leave one o-Test   TP= 23 FN=  7; FP=  6 TN= 24; Se:  76.67 Sp:  80.00 CA:  78.33 AUC:  78.56
+   Leave one o-Learn  TP= 23 FN=  7; FP=  6 TN= 24; Se:  76.67 Sp:  80.00 CA:  78.33 AUC:  97.95
+QDA
+   All records-Test   TP= 30 FN=  0; FP=  0 TN= 30; Se: 100.00 Sp: 100.00 CA: 100.00 AUC: 100.00
+   All records-Learn  TP= 30 FN=  0; FP=  0 TN= 30; Se: 100.00 Sp: 100.00 CA: 100.00 AUC: 100.00
+   20% holdout-Test  Single  TP=  6 FN=  0; FP=  6 TN=  0; Se: 100.00 Sp:   0.00 CA:  50.00 AUC:  50.00
+   20% holdout-Learn Single  TP=  6 FN=  0; FP=  6 TN=  0; Se: 100.00 Sp:   0.00 CA:  50.00 AUC: 100.00
+     20% holdout-Test  Nrep  TP=  6 FN=  0; FP=  5 TN=  1; Se: 100.00 Sp:  16.67 CA:  58.33 AUC:  54.40
+     20% holdout-Learn Nrep  TP=  6 FN=  0; FP=  5 TN=  1; Se: 100.00 Sp:  16.67 CA:  58.33 AUC: 100.00
+   Cross-valid-Test  Single  TP= 29 FN=  1; FP= 18 TN= 12; Se:  96.67 Sp:  40.00 CA:  68.33 AUC:  73.83
+   Cross-valid-Learn Single  TP= 29 FN=  1; FP= 18 TN= 12; Se:  96.67 Sp:  40.00 CA:  68.33 AUC: 100.00
+     Cross-valid-Test  Nrep  TP= 28 FN=  2; FP= 15 TN= 15; Se:  93.33 Sp:  50.00 CA:  71.67 AUC:  75.41
+     Cross-valid-Learn Nrep  TP= 28 FN=  2; FP= 15 TN= 15; Se:  93.33 Sp:  50.00 CA:  71.67 AUC: 100.00
+   Leave one o-Test   TP= 28 FN=  2; FP= 13 TN= 17; Se:  93.33 Sp:  56.67 CA:  75.00 AUC:  86.89
+   Leave one o-Learn  TP= 28 FN=  2; FP= 13 TN= 17; Se:  93.33 Sp:  56.67 CA:  75.00 AUC: 100.00
+>> 
