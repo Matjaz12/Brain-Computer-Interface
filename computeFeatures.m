@@ -74,6 +74,7 @@ function computeFeatures(sub, task, nFeatures, arFeatures)
 
     % Compute the mixing matrix W using CSP
     [W] = f_CSP(cell2mat(T1s(1)), cell2mat(T2s(1)));
+    % display(size(W));
 
     % Remove intervals that were used for training (i.e used to estimate the matrix W)
     T1s(1) = [];
@@ -165,7 +166,10 @@ function computeFeatures(sub, task, nFeatures, arFeatures)
         scatter(lvT1(:, 1), lvT1(:, 2));
         hold on;
         scatter(lvT2(:, 1), lvT2(:, 2));
-        tit
+        xlabel('$log(Var(S_1))$','interpreter','latex', 'FontWeight','bold');
+        ylabel('$log(Var(S_2))$','interpreter','latex', 'FontWeight','bold');
+        title('Scatter plot of feature vectors $log(Var(S))$', 'interpreter','latex', 'FontWeight','bold');
+        saveas(gcf,'scatter_plot.pdf'); % to save current fig (use gcf)
     end
 
     % burgs method finds vector of coefficients a, which correspond to a

@@ -411,7 +411,9 @@ function displayResults(aText, TP, FN, FP, TN, AUC)
         end
     else
         fprintf('   %s Se: %6.2f Sp: %6.2f\n',aText, TP*100.0/(TP+FN), TN*100.0/(TN+FP));
-    end    
+    end
+
+
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
